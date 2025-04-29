@@ -1,0 +1,11 @@
+<button onclick="runPython()">Run Python</button>
+<script>
+  async function runPython() {
+      let pyodide = await loadPyodide();
+      let result = pyodide.runPython(`
+          print("Hello from Python!")
+          5 + 5
+      `);
+      console.log(result);
+  }
+</script>
